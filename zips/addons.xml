@@ -20,7 +20,287 @@
     </extension>
 </addon>
 
-<addon id="skin.titan.vanilla" version="18.19.05.31" name="Titan Vanilla for Kodi Leia" provider-name="malvinas2,marcelveldt,cartman.dos,mardukL,mgonzales">
+<addon id="screensaver.video" name="VideoScreensaver" version="119.09.08" provider-name="malvinas2">
+	<requires>
+		<import addon="xbmc.python" version="2.14.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+	</requires>
+	<extension point="xbmc.ui.screensaver" library="default.py"/>
+  	<extension point="xbmc.python.script" library="screensaver.py"/>
+	<extension point="xbmc.service" library="service.py" start="login"/>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="bg">Скрийнсейвър, който възпроизвежда видео файлове</summary>
+		<summary lang="de">Bildschirmschoner, der eine Videodatei abspielt</summary>
+		<summary lang="el">Προφύλαξη οθόνης αναπαράγει βίντεο</summary>
+		<summary lang="en">Screensaver that plays a video file</summary>
+		<summary lang="es">Salva pantalla que reproduce un archivo de video</summary>
+		<summary lang="fr">Économiseur d'écran jouant un fichier vidéo</summary>
+		<summary lang="fr_CA">Économiseur d'écran lisant un fichier vidéo</summary>
+		<summary lang="gl">Protector de pantalla que reproduce un vídeo</summary>
+		<summary lang="he">שומר מסך המנגן קובץ וידאו</summary>
+		<summary lang="hr">Čuvar zaslona koji reproducira video datoteke</summary>
+		<summary lang="it">Salvaschermo che esegue un file video</summary>
+		<summary lang="ko">비디오 파일 재생 화면 보호기</summary>
+		<summary lang="lt">Ekrano užsklanda, kuri atkuria vaizdo failą</summary>
+		<summary lang="nl">Schermbeveiliging die een videobestand afspeelt</summary>
+		<summary lang="pl">Wygaszacz ekranu odtwarzający plik wideo</summary>
+		<summary lang="pt">Protetor de ecrã que reproduz um ficheiro de vídeo</summary>
+		<summary lang="pt_BR">Protetor de Tela que reproduz arquivos de vídeos.</summary>
+		<summary lang="ro">Protector ecran care redă un fișier video</summary>
+		<summary lang="sv">Skärmsläckare som spelar upp en film</summary>
+		<summary lang="tr">Video dosyası oynatan ekran koruyucu</summary>
+		<summary lang="zh">播放视频文件的屏幕保护</summary>
+		<description lang="bg">Възпроизвежда видео файлове при стартиране на скрийнсейвър. Можете да изберете даден видео файл или да ползвате някой от вградените.</description>
+		<description lang="de">Spielt beim Start des Bildschirmschoners ein Video ab. Dies kann ein benutzerdefiniertes oder eines der eingebauten Videos sein</description>
+		<description lang="el">Αναπαράγει ένα βίντεο όταν ξεκινάει η προφύλαξη οθόνης. Αυτό μπορεί να είναι ένα δικό σας βίντεο, ή ένα από τα ενσωματωμένα.</description>
+		<description lang="en">Plays a video when the screensaver starts, this can be a custom video or one of the built in videos</description>
+		<description lang="es">Reproduce un vídeo cuando el salva pantallas inicia, este vídeo puede ser un vídeo personalizado o uno de los vídeos pre cargados.</description>
+		<description lang="fr">Cette extension joue une vidéo quand l'économiseur d'écran démarre. Cela peut-être une vidéo personnelle ou une des vidéos déjà pré-inclues.</description>
+		<description lang="fr_CA">Lit un fichier vidéo au démarrage de l'économiseur d'écran, pouvant être une vidéo personnalisée ou une des vidéos intégrées</description>
+		<description lang="gl">Reproduce un vídeo ao activar o protector de pantalla, pode ser un vídeo personalizado ou un dos predefinidos</description>
+		<description lang="he">משחק וידאו כאשר שומר המסך מתחיל, זה יכול להיות וידאו מותאם אישית או אחד שנבנה בקטעי וידאו</description>
+		<description lang="hr">Reproducira video snimke kada se čuvar zaslona pokrene, to može biti prilagođena video snimmka ili neka od ugrađenih video snimaka.</description>
+		<description lang="it">Esegui un video quando il salvaschermo inizia, può essere un video personalizzato o uno video integrato</description>
+		<description lang="ko">화면 보호기가 시작될 때 사용자 비디오 또는 내장 비디오를 재생합니다</description>
+		<description lang="lt">Atkuria vaizdo įrašą, kai įjungiama ekrano užsklanda. Tai gali būti savas  ar vienas iš integruotų vaizdo įrašų</description>
+		<description lang="nl">Speelt een video wanneer de schermbeveiliger start, dit kan een vooraf ingestelde video zijn of één van de ingebouwde video's</description>
+		<description lang="pl">Wygaszacz ekranu, który po uruchomieniu odtwarza wbudowany bądź niestandardowy plik wideo.</description>
+		<description lang="pt">Reproduz um vídeo quando o protetor de ecrã inicia, este pode ser um vídeo personalizado ou um dos vídeos embutidos</description>
+		<description lang="pt_BR">Reproduza um vídeo quando iniciar a proteção de tela, podes setar uma vídeo customizado ou um dos vídeos pré-existentes que podem ser transferidos via ajustes do addon.</description>
+		<description lang="sv">Spelar en film när skärmsläckaren startar, det kan vara en egen film eller någon av de inbyggda filmerna</description>
+		<description lang="tr">Ekran koruyucu başladığında bir video oynatır, bu özel bir video veya yerleşik videolardan biri olabilir</description>
+		<description lang="zh">屏幕保护时播放视频，可以是自定义视频或内建视频</description>
+		<language></language>
+		<platform>all</platform>
+		<license>See LICENSE.txt</license>
+		<forum>https://github.com/malvinas2/screensaver.video</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<banner>resources/banner.jpg</banner>
+			<logo>resources/logo.png</logo>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.pinsentry" name="PinSentry" version="119.07.31" provider-name="malvinas2">
+	<requires>
+		<import addon="xbmc.python" version="2.24.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="login"/>
+	<extension point="xbmc.python.script" library="default.py"/>
+	<extension point="xbmc.ui.screensaver" library="screensaver.py"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="bg">Защитава съдържанието на Kodi с PIN код</summary>
+		<summary lang="de">Kodi-Inhalt mit einem PIN-Code sichern</summary>
+		<summary lang="el">Προστασία περιεχομένου Kodi με κωδικό PIN</summary>
+		<summary lang="en">Protect Kodi Content With A Pin Code</summary>
+		<summary lang="fr">Protéger le contenu de Kodi avec un code PIN</summary>
+		<summary lang="fr_CA">Protéger le contenu de Kodi avec un NIP</summary>
+		<summary lang="he">להגן על תוכן Kodi באמצעות קוד PIN</summary>
+		<summary lang="it">Protegge i contenuti di Koki con un Codice Pin</summary>
+		<summary lang="lt">Apsaugoti Kodi turinį PIN kodu</summary>
+		<summary lang="nl">Bescherm Kodi inhoud met een PINcode</summary>
+		<summary lang="pl">Umożliwia zabezpieczenie zawartości Kodi przy pomocy kodu PIN.</summary>
+		<summary lang="pt_BR">Proteger o Conteúdo do Kodi com um Código Pin</summary>
+		<description lang="bg">Принуждава потребителите да въвеждат определен PIN код за да им бъде предоставен достъп до посочено съдържание.</description>
+		<description lang="de">Von Anwendern die Eingabe der korrekten PIN für den angegebenen Inhalt erzwingen.</description>
+		<description lang="en">Force users to enter the correct pin code for given content.</description>
+		<description lang="fr">Force les utilisateurs à saisir le bon code PIN pour un contenu donné.</description>
+		<description lang="fr_CA">Forcer les utilisateurs à saisir le bon NIP pour un contenu donné.</description>
+		<description lang="it">Costringe gli utenti a inserire il codice Pin corretto per accedere ai contenuti</description>
+		<description lang="lt">Reikalauti vartotojų įvesti teisingą PIN kodą pasirinktam turiniui.</description>
+		<description lang="nl">Forceer gebruikers een geldige PIN in te voeren voor gegeven content.</description>
+		<description lang="pl">Wymusza na użytkownikach wprowadzenie poprawnego kodu PIN, przez uzyskaniem dostępu do danej zawartości.</description>
+		<description lang="pt_BR">Força o usuário a entrar o código Pin correto para lhe dar acesso aos conteúdos.</description>
+		<language></language>
+		<platform>all</platform>
+		<license>See LICENSE.txt</license>
+		<forum>https://github.com/malvinas2/script.pinsentry</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<banner>resources/banner.jpg</banner>
+			<logo>resources/logo.png</logo>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.tvtunes" name="TvTunes" version="119.07.25" provider-name="malvinas2">
+	<requires>
+		<import addon="xbmc.python" version="2.20.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+		<import addon="script.module.beautifulsoup" version="3.2.1"/>
+		<import addon="script.module.requests" version="2.3.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="login"/>
+	<extension point="xbmc.python.module" library="resources/lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="bg">Сваля и възпроизвежда мелодиите от вашите филми и сериали</summary>
+		<summary lang="ca">Obté i reproduieix els temes de les seves pel·lícules i sèries de televisió</summary>
+		<summary lang="da">Hent og afspil dine Film og TV-show Temaer.</summary>
+		<summary lang="de">Hole und spiele die Titelmelodie beim Browsen der TV-Shows</summary>
+		<summary lang="el">Λήψη και αναπαραγωγή μουσικών θεμάτων (TvTunes) των τηλεοπτικών σας σειρών</summary>
+		<summary lang="en">Play your soundtrack or video themes whilst browsing your library</summary>
+		<summary lang="es">Descarga y reproduce las bandas sonoras de las series de tu biblioteca</summary>
+		<summary lang="fr">Récupérez et écoutez les génériques des séries TV</summary>
+		<summary lang="fr_CA">Récupérer et lire vos thèmes de bandes sonores tout en parcourant votre vidéothèque</summary>
+		<summary lang="gl">Obter e reproducir a música das súas Series de TV</summary>
+		<summary lang="he">הורדה וניגון נעימות של סרטים וסדרות בעת עיון בספריה</summary>
+		<summary lang="hr">Nabavite i reproducirajte temu vašeg omiljenog filma i TV serije prilikom pregledavanja svoje videoteke</summary>
+		<summary lang="it">Ottieni ed esegui i temi musicali delle tue Serie tV</summary>
+		<summary lang="ko">영화와 TV 쇼의 테마 음악을 가져와서 재생합니다</summary>
+		<summary lang="lt">gauti ir atkurti jūsų filmų ir tv laidų temas</summary>
+		<summary lang="nl">Verkrijg en speel je nummer of video thema`s tijdens zoeken in jouw bibliotheek</summary>
+		<summary lang="no">Hent og spill av kjenningsmelodier mens du blar gjennom biblioteket</summary>
+		<summary lang="pl">Pobieraj i odtwarzaj ścieżki dźwiękowe lub motywy wideo podczas przeglądania biblioteki</summary>
+		<summary lang="pt">Obtenha e reproduza as músicas dos seus filmes e séries de TV.</summary>
+		<summary lang="pt_BR">Obtenha e reproduza o tema musical das suas séries de TV</summary>
+		<summary lang="sv">Hämtar och spelar dina TV-serier-teman</summary>
+		<description lang="bg">Скриптът ще Ви помогне да се сдобиете с мелодии от филми и сериали. Когато преглеждате инф. за даден филм или епизодите от даден сериал, съответната мелодия ще се възпроизвежда автоматично. За целта е необходимо да ползвате съвместим облик.</description>
+		<description lang="ca">Aquest script t'ajudarà a cercar la banda sonora de les teves pel·lícules i sèries de televisió en www.televisiontunes.com Les guardarà en un fitxer theme[0-9].mp3 a la carpeta dels vídeos i seran reproduïdes mentre navegues per la teva col·lecció de vídeos, quant entris a la carpeta d'una sèrie o a la pantalla d'informació de vídeo. (Necessites una pell compatible per a aquesta funcionalitat)</description>
+		<description lang="da">Scriptet vil hjælpe dig med at hente temaer til dit film og serie bibliotek fra www.televisiontunes.com. Den gemmer dem som theme[0-9].mp3 i hver af dine videomapper, så de vil blive spillet mens du gennemser dit videobibliotek når du går ind i seriemappen eller Video Information (Dit skin skal være kompatibel med denne feature)</description>
+		<description lang="de">Dieses Skript unterstützt das Laden, Organisieren und Abspielen von Titelmelodien deiner Filme und TV-Serien. Diese werden dann abgespielt, wenn du in deiner Datenbank oder den Video-Ordnern stöberst (benötigt einen kompatiblen Skin)</description>
+		<description lang="el">Αυτό το script θα σας βοηθήσει να κατεβάσετε μουσικά θέματα των τηλεοπτικών σας σειρών από το www.televisiontunes.com, θα τα αποθηκεύει σε αρχεία μορφής theme.mp3 στο φάκελο της εκάστοτε σειράς, και θα τα αναπαράγει κατά την περιήγησή σας στη συλλογή τηλ. σειρών σας (απαιτείται να υποστηρίζεται από το κέλυφός σας)</description>
+		<description lang="en">TvTunes will play themes whilst browsing your Kodi library.</description>
+		<description lang="es">Este script te ayudará a buscar las bandas sonoras de tus películas y series de www.televisiontunes.com y guardará un fichero theme.mp3 en el directorio de tu serie y será reproducido mientras navegas dentro de la carpeta de la serie. (Necesitas una skin compatible para esta funcionalidad)</description>
+		<description lang="fr">Ce script aidera à télécharger les génériques de série depuis www.televisiontunes.com. Il les enregistrera dans un fichier theme.mp3 dans les dossiers des séries, et ils seront ensuite joués à l'entrée dans la série correspondante (cette fonctionnalité requiert un thème compatible)</description>
+		<description lang="fr_CA">TVTunes est équipé de fonctions puissantes qui permettent la récupération, l'organisation et la lecture de thèmes tout en parcourant votre vidéothèque Kodi.</description>
+		<description lang="gl">Este script axudaralle a obter dende www.televisiontunes.com o tema da súa biblioteca de series, gardándoo no ficheiro theme.mp3 por cada cartafol da biblioteca entón reproduciranse ao entrar nos diferentes cartafoles ao navegar pola biblioteca (precisa de que o seu tema sexa compatíbel con esta carácteristica)</description>
+		<description lang="he">סקריפט זה יעזור לך להשיג שירי נושא לספריות הסרטים והסדרות שלך מ-www.televisiontunes.com, ישמור אותם בקובץ בשם theme[0-9].mp3 בכל אחת מתיקיות הוידאו שלך והם ינוגנו בעת עיון בספריית הוידאו כאשר תיכנס לספריית סדרה או במסך מידע וידאו (נדרשת תאימות המעטפת עבור יכולת זו)</description>
+		<description lang="hr">TvTunes je opremljen s moćnim značajkama koje omogućavaju nabavljanje, organizaciju i reproduciranje glazbenih tema dok vi pregledavate vašu Kodi videoteku, kada se koristi zajedno s kompatibilnom presvlakom.</description>
+		<description lang="it">Questo script ti aiuterà ad ottenere il tema delle serie tv presenti nella tua libreria da www.televisiontunes.com, li salverà nel file theme.mp3 in ogni cartella delle tue serie così quando sfoglierai la serie tv il tema sarà eseguito (il tuo skin deve essere compatibile)</description>
+		<description lang="ko">라이브러리의 영화와 TV 쇼 테마 음악을 www.televisiontunes.com 에서 가져와서 theme[0-9].mp3 형식으로 비디오 폴더에 저장합니다. TV 쇼 폴더나 비디오 정보 화면으로 들어가면 비디오 라이브러리를 탐색하는 동안 주제음악이 재생됩니다. (이 기능 사용하려면 스킨에서 지원하여야 합니다.)</description>
+		<description lang="lt">Šis skriptas jums padės temas jūsų filmų ir tv laidų temas iš www.televisiontunes.com. Jos bus išsaugotos theme[0-9].mp3 faile, kiekviename jūsų vaizdo aplanke ir bus atkurtos, naršant vaizdo bibliotekoje, pasirinkus TV laidos aplanką arba vaizdo informacijos langą (teminė išvaizda turi būti suderinama su šia funkcija)</description>
+		<description lang="nl">Dit script zoekt thema`s van TV series in jouw TV seriebibliotheek op www.televisiontunes.com en slaat ze op in thema[0-9].mp3 bestand in elke TV serie map. Ze worden afgespeeld wanneer je de  TV serie in bibliotheek modus bekijkt of Video-informatiescherm (Het gebruikte ontwerp moet wel compatibel zijn met dit script)</description>
+		<description lang="no">TvTunes er velutrustet med kraftige funksjoner som gjør det mulig hente, organisere og spille av kjenningsmelodier mens du blar igjennom Kodi biblioteket.</description>
+		<description lang="pl">Dodatek TvTunes wyposażono w potężny zestaw funkcji umożliwiający pobieranie, organizowanie i odtwarzanie motywów muzycznych podczas przeglądania biblioteki Kodi.</description>
+		<description lang="pt">Com este addon, poderá obter as músicas dos filmes e séries TV na sua biblioteca a partir de televisiontunes.com. Serão guardadas em ficheiros theme[0-9].mp3 dentro das pastas de vídeo e serão reproduzidas durante a navegação na biblioteca de vídeo, quando entrar dentro da pasta de Séries TV ou no ecrã de Informação de Vídeo (é necessário um tema compatível).</description>
+		<description lang="pt_BR">Este script ajudará você a obter o tema da sua coleção de séries de TV de www.televisiontunes.com, que serão salvos em um arquivo theme.mp3 em cada uma das pastas de suas séries e serão reproduzidos sempre que você acessar uma série na sua coleção (a skin precisa ser compatível com este recurso)</description>
+		<description lang="sv">Detta skript hjälper dig att hitta teman till ditt tv-seriebibliotek från www.televisiontunes.com som sparas i theme.mp3 filer i varje tv-seriemapp som sedan spelas när du öppnar tv-seriemappen (ditt skal måste vara kompatibelt för detta)</description>
+		<language></language>
+		<platform>all</platform>
+		<license>See LICENSE.txt</license>
+		<forum>https://github.com/malvinas2/script.tvtunes</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<banner>resources/banner.jpg</banner>
+			<logo>resources/logo.png</logo>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.videoextras" name="VideoExtras" version="119.07.31" provider-name="malvinas2">
+	<requires>
+    	<import addon="xbmc.python" version="2.20.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+  	</requires>
+  	<extension point="xbmc.python.script" library="default.py"/>
+	<extension point="xbmc.service" library="service.py" start="login"/>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="kodi.context.item" library="contextmenu.py">
+		<item>
+			<label>32028</label>
+			<visible>!String.IsEmpty(Window(videos).Property("VideoExtrasShowContextMenu")) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos)]</visible>
+		</item>
+	</extension>
+  	<extension point="xbmc.addon.metadata">
+    	<summary lang="ca">Afegeix vídeos extres a les teves pel·lícules i sèries de televisió.</summary>
+    	<summary lang="cs">Přidej Video bonusy k Filmům a TV seriím</summary>
+    	<summary lang="de">Video Extras zu den Filmen und TV-Sendungen in Ihrer Sammlung hinzufügen</summary>
+    	<summary lang="el">Προσθήκη DVD Extras στις Ταινίες και τις Τηλεοπτικές σας Σειρές.</summary>
+    	<summary lang="en">Add Video Extras to your Movies and TV shows.</summary>
+    	<summary lang="es">Añadir extras de vídeo para sus películas y programas de televisión.</summary>
+    	<summary lang="fr">Ajouter des bonus vidéo aux films et séries TV.</summary>
+    	<summary lang="fr_CA">Ajouter des bonus vidéos à vos films et séries télé.</summary>
+    	<summary lang="gl">Engadir Extras de Vídeos aos seus Filmes e Series de TV.</summary>
+    	<summary lang="he">הוסף ספיישלים (Video Extras) לסרטים ולסדרות שלך.</summary>
+    	<summary lang="hr">Dodajte video dodatke vašim filmovima i TV emisijama.</summary>
+    	<summary lang="hu">Videó Extrák a Filmekhez és Sorozatokhoz</summary>
+    	<summary lang="is">Bætir Video Extras við Kvikmyndir og Sjónvarpsþætti</summary>
+    	<summary lang="it">Aggiungi i Video Extra ai tuoi Video e Serie tv</summary>
+    	<summary lang="ko">영화와 TV 쇼 라이브러리에 부가영상 추가</summary>
+    	<summary lang="lt">Pridėkite video priedus filmams ir TV laidoms.</summary>
+    	<summary lang="nl">Voeg Video extra`s toe aan jou Films en TV series.</summary>
+    	<summary lang="pl">Wparcie dodatkowych materiałów dla filmów i seriali telewizyjnych.</summary>
+    	<summary lang="pt">Adicionar Extras de Vídeo aos seus Filmes e Séries TV</summary>
+    	<summary lang="pt_BR">Adiciona extras de vídeos em filmes e seriados.</summary>
+    	<summary lang="sv">Lägg till Video Extras till dina filmer och TV-program</summary>
+    	<description lang="ca">Proporciona una manera d'afegir vídeo extres a la seva biblioteca de vídeo. Mira el wiki per instruccions d'instal·lació.</description>
+    	<description lang="cs">Poskytuje způsob jak přidat Bonusy do vaší video knihovny. Instrukce pro nastavení viz. wiki.</description>
+    	<description lang="de">Bietet eine Möglichkeit, um Videoextras zu Ihrer Videobibliothek hinzuzufügen. Schauen Sie ins Wiki für Installationsanweisungen.</description>
+    	<description lang="el">Σας παρέχει έναν τρόπο να προσθέσετε DVD Extras στη Συλλογή σας. Ελέγξτε τον ιστότοπο του wiki για οδηγίες εγκατάστασης.</description>
+    	<description lang="en">Provides a way to add Video Extras to your Video library. Look at the wiki for setup instructions.</description>
+    	<description lang="es">Proporciona una manera de añadir extras de vídeos a su biblioteca. Mira el wiki para instrucciones de instalación.</description>
+    	<description lang="fr">Fournit une solution pour ajouter des bonus vidéo à la vidéothèque. Consulter le Wiki pour les instructions de paramétrage.</description>
+    	<description lang="fr_CA">Offre une façon d'ajouter des bonus vidéos à votre vidéothèque. Consulter le wiki pour des instructions de configuration.</description>
+    	<description lang="gl">Prové dun camiño para engadir Extras á sea biblioteca de Vídeos. Ver na wiki para instruccións da configuración.</description>
+    	<description lang="he">מספק אפשרות להוסיף ספיישלים (Video Extras) לספריית הוידאו שלך. פנה לוויקי להוראות התקנה.</description>
+    	<description lang="hr">Pruža vam način dodavanja video dodataka u vašu videoteku. Potražite na wiki stranicama informacije za podešavanje.</description>
+    	<description lang="hu">Biztosítja a lehetőséget hogy Extrákat adjon hozzá a Videó Médiatárához. Nézze meg a wiki-t a telepítés beállításához.</description>
+    	<description lang="is">Gerir kleyft að bæta við Video Extras við myndasöfnin þín. Skoðaðu wiki til að sjá hvernig þetta er sett upp. Video Extras heldur utan um smámyndir og Fanart og fl og sér á skipulegan hátt um að geyma og halda utan um það.</description>
+    	<description lang="it">Provvede un modo per aggiungere Video Extra alla tua biblioteca Video. Consulta il wiki per le istruzioni di configurazione..</description>
+    	<description lang="ko">비디오 라이브러리에 부가영상(보너스 영상, 셔플, 다른 버전 등)을 추가할 수 있게 합니다. 설치 방법은 Kodi 위키를 참조하세요.</description>
+    	<description lang="lt">Suteikia būdą pridėti video priedus į vaizdo biblioteką. Nustatymo instrukcijas galite rasti vikio puslapyje.</description>
+    	<description lang="nl">Biedt een manier om Video extra`s toe te voegen aan jou videobibliotheek. Kijk op de wiki voor instellingsinstructies.</description>
+    	<description lang="pl">Umożliwia dodanie dodatkowych materiałów wideo do biblioteki wideo. Zapoznaj się z informacjami na stronach Wiki w celu poprawnej konfiguracji. </description>
+    	<description lang="pt">Permite adicionar extras de vídeo à sua Biblioteca de Vídeos. Leia o wiki para mais instruções de configuração.</description>
+    	<description lang="pt_BR">Prove um caminho para vídeo extras via info de vídeo. Ver o wiki para instruções de configuração.</description>
+    	<description lang="sv">Tillhandahåller ett sätt att lägga till Video Extras till ditt filmbibliotek. Se wiki för inställningsanvisningar.</description>
+    	<disclaimer lang="cs">Tvůrci skinů: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="de">Skin-Ersteller, bitte schaut für Informationen über die Integration in euren Skin im Wiki:&#10;https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="el">Skinners, ελέγξτε τον ιστότοπο για πληροφορίες σχετικά με την ενσωμάτωση στο κέλυφός σας: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="en">Skinners, please see the wiki to know how to integrate it in your skin: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="es">Desarrolladores, por favor ver el Wiki para saber como integrarlo en tu Skin&#10;https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="fr">Développeurs de thème, merci de lire le Wiki afin d'obtenir les informations pour l'intégrer à votre thème : https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="fr_CA">Habilleurs, consultez le wiki pour savoir comment l'intégrer à votre habillage : https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="gl">Autores de temas, por favor vexan a wiki para saber como integralo no seu tema:&#10;https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="ko">스킨 제작자 여러분, 스킨에 통합하는 방법은 위키를 참조하기 바랍니다: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="lt">Teminių išvaizdų kūrėjai, instrukcijas kaip integruoti šį priedą į jūsų teminę išvaizdą rasite vikio puslapyje: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="nl">Skinners, bekijk de wikie om te weten hoe je heet moet integreren in jouw skin: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="pl">Twórcy skór powinni zapoznać się z informacjami na stronach Wiki, aby dowiedzieć więcej o integracji z dodatkiem: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="pt">Os autores dos temas deverão consultar o wiki para saberem como integrar este add-on no tema: https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="pt_BR">Skinners, por favor veja o wiki para saber como integrar em sua skin:&#10;https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<disclaimer lang="sv">Skaltillverkare, använd wikin för att se hur du kan integrera det i ditt skal:&#10;https://github.com/robwebset/script.videoextras/wiki</disclaimer>
+    	<language></language>
+    	<platform>all</platform>
+    	<license>See LICENSE.txt</license>
+    	<forum>https://github.com/malvinas2/script.videoextras</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<banner>resources/banner.jpg</banner>
+			<logo>resources/logo.png</logo>
+		</assets>
+  </extension>
+</addon>
+
+<addon id="skin.titan.vanilla" version="18.19.09.01" name="Titan Vanilla for Kodi Leia" provider-name="malvinas2,marcelveldt,cartman.dos,mardukL,mgonzales">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0" />
 		<import addon="script.skinshortcuts" version="0.6.5"/>
@@ -36,8 +316,8 @@
         <import addon="resource.images.backgroundoverlays.basic" version="1.0.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
-		<res width="1920" height="1200" aspect="16:10" default="false" folder="1080i" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="bg_BG">Обликът "Titan Vanilla for Kodi Leia" за MediaPortal адаптиран за Kodi, с много добавени функции.</summary>
@@ -65,10 +345,10 @@
 		<summary lang="zh_CN">MediaPortal's Titan Vanilla for Kodi Leia 皮肤富含大量的功能。</summary>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
-		<forum>http://forum.kodi.tv/forumdisplay.php?fid=212</forum>
-		<website>http://forum.kodi.tv/forumdisplay.php?fid=212</website>
+		<forum>https://forum.kodi.tv/showthread.php?tid=344342</forum>
+		<website>https://forum.kodi.tv/showthread.php?tid=344342</website>
 		<email>malvinas2@gmx.de</email>
-		<source>https://github.com/marcelveldt/skin.titan.leiaVanilla</source>
+		<source>https://github.com/malvinas2/skin.titan.vanilla</source>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
