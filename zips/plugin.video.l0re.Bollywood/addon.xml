@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.l0re.Bollywood" name="Bollithek" version="0.2.1" provider-name="L0RE">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+        <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="de">Bollithek von http://www.zeeone.de</summary>
+        <summary lang="de">Bollithek von http://www.zeeone.de</summary>
+        <language></language>
+        <description lang="en">Bollithek von http://www.zeeone.de</description>       
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <source>https://github.com/kodinerds/repo</source>
+        <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+        <email>andreas at vogler dot name</email>
+    </extension>
+</addon>

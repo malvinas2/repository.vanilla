@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.l0re.bvbtotal" name="Borussia Dortmund Mediathek" version="0.1.1" provider-name="L0RE">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+        <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="de">Videoportal rund um Berussia</summary>
+    <summary lang="en">Videoportal rund um Berussia</summary>
+    <description lang="en">Videoportal rund um Berussia</description>
+    <description lang="de">Videoportal rund um Berussia</description>
+    <website></website>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <source>https://github.com/kodinerds/repo/tree/master/addons/plugin.video.l0re.bvbtotal</source>
+    <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+    <email>andreas at vogler dot name</email>
+    <platform>all</platform>
+  </extension>
+</addon>

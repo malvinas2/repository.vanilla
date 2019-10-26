@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.l0re.cinetrailer" name="Cinetrailer" version="0.3.2" provider-name="L0RE">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+        <import addon="script.common.plugin.cache" version="2.5.5"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="de">Trailer von CineTrailer.tv</summary>
+        <summary lang="de">Trailer von CineTrailer.tv</summary>
+        <language></language>
+        <description lang="en">Trailer von CineTrailer.tv</description>       
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <source>https://github.com/kodinerds/repo</source>
+        <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+        <email>andreas at vogler dot name</email>
+    </extension>
+</addon>

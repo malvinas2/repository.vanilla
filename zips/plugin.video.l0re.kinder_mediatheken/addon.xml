@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.l0re.kinder_mediatheken" name="Kinder Mediatheken" version="0.2.0" provider-name="L0RE">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">German kids media libraries</summary>
+        <summary lang="de">Deutsche Kinder Mediatheken</summary>
+        <language>de</language>
+        <description lang="en">German kids media libraries</description>
+        <description lang="de">Deutsche Kinder Mediatheken</description>
+        <source>https://github.com/kodinerds/repo</source>
+        <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+        <email>andreas at vogler dot name</email>
+        <website></website>
+    </extension>
+</addon>
