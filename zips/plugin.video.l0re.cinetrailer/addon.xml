@@ -1,22 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.l0re.cinetrailer" name="Cinetrailer" version="0.3.2" provider-name="L0RE">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="script.common.plugin.cache" version="2.5.5"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="de">Trailer von CineTrailer.tv</summary>
-        <summary lang="de">Trailer von CineTrailer.tv</summary>
-        <language></language>
-        <description lang="en">Trailer von CineTrailer.tv</description>       
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <source>https://github.com/kodinerds/repo</source>
-        <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
-        <email>andreas at vogler dot name</email>
-    </extension>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<addon id="plugin.video.L0RE.cinetrailer" name="Cinetrailer" version="0.6.0" provider-name="L0RE">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="script.module.requests" version="2.12.4"/>
+		<import addon="script.common.plugin.cache" version="2.6.0"/>
+		<import addon="script.module.kodi-six" version="0.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="de_DE">Trailer von CineTrailer.tv</summary>
+		<summary lang="en_GB">Trailer from CineTrailer.tv</summary>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+		<website></website>
+		<email></email>
+		<source>https://github.com/kodinerds/repo/tree/master/plugin.video.L0RE.cinetrailer</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news>
+[B][COLOR orangered]0.6.0 (19.12.2019)[/COLOR][/B][CR]- Select trailer if there are more than 1[CR]
+[B][COLOR orangered]0.5.0 (18.12.2019)[/COLOR][/B][CR]- Refactoring[CR]- Added movie information[CR]- Added cache clearing setting[CR]
+[B][COLOR orangered]0.4.0 (17.12.2019)[/COLOR][/B][CR]- Python 3 compability</news>
+	</extension>
 </addon>

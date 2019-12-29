@@ -88,9 +88,9 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.l0re.arte" name="ARTE.TV" version="0.5.9" provider-name="L0RE">
+<addon id="plugin.video.L0RE.arte" name="ARTE.TV" version="0.6.0" provider-name="L0RE">
 	<requires>
-		<import addon="xbmc.python" version="2.24.0"/>
+		<import addon="xbmc.python" version="2.25.0"/>
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
@@ -98,8 +98,8 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="de_DE">Videoportal von ARTE (DE/FR)</summary>
 		<summary lang="en_GB">Videoportal of ARTE (DE/FR)</summary>
-		<description lang="de_DE">Mediathek und Livestream - Schwerpunkte sind Kultur, Europa und die Vermittlung von Informationen aus vorzugsweise ungewöhnlichen Perspektiven.[CR]Die Programme des europäischen Kultursenders online auf "arte.tv"</description>
-		<description lang="en_GB">Media library and Livestream - focus is Culture, Europe and the transmission of information from preferably unusual Perspectives.[CR]The programs of the European cultural channel online on "arte.tv".</description>
+		<description lang="de_DE">Mediathek und Livestream - Schwerpunkte sind Kultur, Europa und die Vermittlung von Informationen aus vorzugsweise ungewöhnlichen Perspektiven.[CR]Reportagen, Serien, Filme, Dokus, Magazine - Die Programme von ARTE online auf arte.tv.</description>
+		<description lang="en_GB">Media library and Livestream - focus is Culture, Europe and the transmission of information from preferably unusual Perspectives.[CR]Reports, Series, Movies, Documentaries, Magazines - The programs of ARTE online on arte.tv.</description>
 		<disclaimer lang="de_DE">Die von diesem Addon dargestellten Inhalte werden von den Erstellern des Addons weder gehostet oder verbreitet, noch stehen die Ersteller in irgendeiner Beziehung zu den Anbietern des Inhalts.</disclaimer>
 		<disclaimer lang="en_GB">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
 		<language></language>
@@ -113,8 +113,10 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR orangered]Version 0.5.9  (30.09.2019)[/COLOR][/B] by realvito[CR]
-- fixed: LibreELEC - Fehler beim öffnen der Rubrik = Programm sortiert nach Datum (Error: unsupported locale setting)
+		<news>[B][COLOR orangered]Version 0.6.0  (01.12.2019)[/COLOR][/B] by realvito[CR]
+- fixed: Rubrik = Themen kein Inhalt und Fehler wird angezeigt (läuft jetzt auch über die API)
+- fixed: Suche mit Umlauten im Suchbegriff erzeugt Fehler
+- fixed: UnicodeEncodeError für 'time.strftime' und Sondersymbole unter Python-3 (KODI-Matrix)
 		</news>
 	</extension>
 </addon>
@@ -164,26 +166,36 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.l0re.cinetrailer" name="Cinetrailer" version="0.3.2" provider-name="L0RE">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="script.common.plugin.cache" version="2.5.5"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="de">Trailer von CineTrailer.tv</summary>
-        <summary lang="de">Trailer von CineTrailer.tv</summary>
-        <language></language>
-        <description lang="en">Trailer von CineTrailer.tv</description>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <source>https://github.com/kodinerds/repo</source>
-        <forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
-        <email>andreas at vogler dot name</email>
-    </extension>
+<addon id="plugin.video.L0RE.cinetrailer" name="Cinetrailer" version="0.6.0" provider-name="L0RE">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="script.module.requests" version="2.12.4"/>
+		<import addon="script.common.plugin.cache" version="2.6.0"/>
+		<import addon="script.module.kodi-six" version="0.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="de_DE">Trailer von CineTrailer.tv</summary>
+		<summary lang="en_GB">Trailer from CineTrailer.tv</summary>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+		<website></website>
+		<email></email>
+		<source>https://github.com/kodinerds/repo/tree/master/plugin.video.L0RE.cinetrailer</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news>
+[B][COLOR orangered]0.6.0 (19.12.2019)[/COLOR][/B][CR]- Select trailer if there are more than 1[CR]
+[B][COLOR orangered]0.5.0 (18.12.2019)[/COLOR][/B][CR]- Refactoring[CR]- Added movie information[CR]- Added cache clearing setting[CR]
+[B][COLOR orangered]0.4.0 (17.12.2019)[/COLOR][/B][CR]- Python 3 compability</news>
+	</extension>
 </addon>
 
 <addon id="plugin.video.l0re.comedycentral" name="Comedycentral" version="0.1.0" provider-name="L0RE">
@@ -900,7 +912,7 @@
   </extension>
 </addon>
 
-<addon id="skin.titan.vanilla" version="18.19.11.18" name="Titan Vanilla for Kodi Leia" provider-name="canuma,cartman.dos,malvinas2,marcelveldt,mardukL,mgonzales">
+<addon id="skin.titan.vanilla" version="18.19.12.29" name="Titan Vanilla for Kodi Leia" provider-name="canuma,cartman.dos,malvinas2,marcelveldt,mardukL,mgonzales">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0" />
 		<import addon="script.skinshortcuts" version="0.6.5"/>
