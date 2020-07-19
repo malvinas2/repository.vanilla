@@ -88,7 +88,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.L0RE.arte" name="ARTE.TV" version="0.6.0" provider-name="L0RE">
+<addon id="plugin.video.l0re.arte" name="ARTE.TV" version="0.6.0" provider-name="L0RE">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
 	</requires>
@@ -606,6 +606,42 @@
     </extension>
 </addon>
 
+<addon id="resource.images.skinbackgrounds.titanium" name="Skin Backgrounds - Titanium" version="1.0.1" provider-name="marcelveldt">
+	<extension point="kodi.resource.images" compile="false" type="skinbackgrounds" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin Backgrounds Pack - Titanium</summary>
+		<description lang="en">Skin Backgrounds Pack - Titanium</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="resource.images.skinicons.wide" name="Skin Icons - Wide" version="1.0.4" provider-name="marcelveldt">
+	<extension point="kodi.resource.images" compile="false" type="skinicons" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Skin Icons Pack - Wide</summary>
+		<description lang="en">Skin Icons Pack - Wide</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="resource.skinthemes.titan" version="1.0.3" name="Titan skin Themes" provider-name="marcelveldt">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.resource.images" compile="false" type="skinthemes" />
+  <extension point="kodi.addon.metadata">
+    <summary lang="en">Additional skin themes for the Titan skin</summary>
+    <description lang="en">A pack of additional skin themes for the Titan skin, provided by both the author of the skin and community contributions</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="screensaver.video" name="VideoScreensaver" version="119.09.08" provider-name="malvinas2">
 	<requires>
 		<import addon="xbmc.python" version="2.14.0"/>
@@ -912,7 +948,7 @@
   </extension>
 </addon>
 
-<addon id="skin.titan.vanilla" version="18.20.01.05" name="Titan Vanilla for Kodi Leia" provider-name="canuma,cartman.dos,malvinas2,marcelveldt,mardukL,mgonzales">
+<addon id="skin.titan.vanilla" version="18.20.07.19" name="Titan Vanilla" provider-name="canuma,cartman.dos,malvinas2,marcelveldt,mardukL,mgonzales">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0" />
 		<import addon="script.skinshortcuts" version="0.6.5"/>
